@@ -130,7 +130,7 @@
 <meta property="og:site_name" content="虫谷">
 <meta property="og:description" content="前提说明：这里环境为Windows。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-09T06:17:36.891Z">
+<meta property="og:updated_time" content="2019-04-09T06:25:49.990Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitHub+Hexo搭建自己的Blog 细节说明">
 <meta name="twitter:description" content="前提说明：这里环境为Windows。">
@@ -404,7 +404,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-09 14:17:36" itemprop="dateModified" datetime="2019-04-09T14:17:36+08:00">2019-04-09</time>
+                <time title="修改时间：2019-04-09 14:25:49" itemprop="dateModified" datetime="2019-04-09T14:25:49+08:00">2019-04-09</time>
               
             
           </span>
@@ -453,7 +453,7 @@
         <p>前提说明：这里环境为Windows。</p>
 <a id="more"></a>
 <p>之前安装过GitHub+Hexo环境，由于重装系统，环境自然还得重新搭建，而之前的配置也是花了好几天，要是再弄一遍，实在麻烦。网上详细的教程也很多，可是也都纷说不同，我自己部署的过程中还是遇到了不少坑。下面详细说说自己安装了好几遍的经验和重点步骤的注意问题。</p>
-<p>0，所有操作和命令无特殊说明都在自己的新建文件夹中进行，特别说明的是安装hexo时文件夹要为空<br>1，Git对GitHub的账户名字的大小写是敏感的，一定要注意，重装环境的时候极其重要！！！<br>2，GitHub Page文章的密码设了之后避免整个网站来回访问都要输入<br>3，不绑定域名默认站点不安全，QQ或者微信无法直接访问，浏览器里报“不安全”<br>4，生成的这个id_rsa.pub，复制到GitHub后要是没有生效就再在本地生成一个<br>5，一般来说，普通用户环境下安装也能成功<br>6，站点搜索功能，有local、algolia，启动其一不会出现问题<br>7，提交代码时（hexo g 或 hexo d）无异常，能提升站点的整体访问速度，无“不安全”因素<br>8，再次配置时，主题文件夹不能全盘复制，会出现渲染错误，只需把配置文件用原来的替换<br>9，执行下面的命令后，在第一次使用hexo d上传代码时自动跳出GitHub的登录界面<br>    git config –global user.email “<a href="mailto:you@example.com" target="_blank" rel="noopener">you@example.com</a>“<br>    git config –global user.name “Your Name”</p>
+<p>0，所有操作和命令无特殊说明都在自己的新建文件夹中进行，特别说明的是安装hexo时文件夹要为空<br>1，Git对GitHub的账户名字的大小写是敏感的，一定要注意，重装环境的时候极其重要！！！<br>2，GitHub Page文章的密码设了之后避免整个网站来回访问都要输入<br>3，不绑定域名默认站点不安全，QQ或者微信无法直接访问，浏览器里报“不安全”<br>4，生成的这个id_rsa.pub，复制到GitHub后要是没有生效就再在本地生成一个<br>5，一般来说，普通用户环境下安装也能成功<br>6，站点搜索功能，有local、algolia，启动其一不会出现问题<br>7，提交代码时（hexo g 或 hexo d）无异常，能提升站点的整体访问速度，无“不安全”因素<br>8，再次配置时，主题文件夹不能全盘复制，会出现渲染错误，只需把配置文件用原来的替换（可能不对）<br>9，执行下面的命令后，在第一次使用hexo d上传代码时自动跳出GitHub的登录界面<br>    git config –global user.email “<a href="mailto:you@example.com" target="_blank" rel="noopener">you@example.com</a>“<br>    git config –global user.name “Your Name”</p>
 <h2 id="hexo搭建流程"><a href="#hexo搭建流程" class="headerlink" title="hexo搭建流程"></a>hexo搭建流程</h2><ul>
 <li>注册GitHub，创建自己的仓库（用户名.github.io）</li>
 <li>本地环境部署（node，git）</li>
@@ -979,7 +979,7 @@
     var isfetched = false;
     var isXml = true;
     // Search DB path;
-    var search_path = "";
+    var search_path = "search.xml";
     if (search_path.length === 0) {
       search_path = "search.xml";
     } else if (/json$/i.test(search_path)) {
