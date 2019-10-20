@@ -1,0 +1,2027 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入查看密码') !== ''){
+                alert('密码不正确,请加QQ群707136339获取');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.7.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.7.0',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: 'GJPUMXB9XH',
+      apiKey: '',
+      indexName: 'hexosearch',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="好记性不如烂笔头">
+<meta name="keywords" content="私人,日记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++笔记">
+<meta property="og:url" content="https://chengly.top/2019/10/20/C++笔记/index.html">
+<meta property="og:site_name" content="欢迎来到最菜的菜鸟专区">
+<meta property="og:description" content="好记性不如烂笔头">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-20T14:45:18.161Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C++笔记">
+<meta name="twitter:description" content="好记性不如烂笔头">
+
+
+
+
+
+
+  <link rel="canonical" href="https://chengly.top/2019/10/20/C++笔记/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>C++笔记 | 欢迎来到最菜的菜鸟专区</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">欢迎来到最菜的菜鸟专区</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chengly.top/2019/10/20/C++笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="YG201506">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="欢迎来到最菜的菜鸟专区">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">C++笔记
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-20 00:00:00 / 修改时间：22:45:18" itemprop="dateCreated datePublished" datetime="2019-10-20T00:00:00+08:00">2019-10-20</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/编程/" itemprop="url" rel="index"><span itemprop="name">编程</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <a href="/2019/10/20/C++笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/10/20/C++笔记/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><em>好记性不如烂笔头</em></p>
+<a id="more"></a>
+<p>//1//<br>//10层汉诺塔递归解法，过程输出到文件<br>共移动 2的n次方减1次</p>
+<p>#include <fstream></fstream></p>
+<p>#include <iostream></iostream></p>
+<p>using namespace std;</p>
+<p>ofstream fout(“out.txt”);</p>
+<p>void Move(int n, char i, char j)<br>{<br>    fout &lt;&lt; “把” &lt;&lt; n &lt;&lt; “号从” &lt;&lt; i &lt;&lt; “移动到” &lt;&lt; j &lt;&lt; endl;<br>}</p>
+<p>void Hannoi(int n, char a, char b, char c)<br>{<br>    if (n == 1)<br>    {<br>        Move(1, a, c);<br>    }<br>    else<br>    {<br>        Hannoi(n - 1, a, c, b);<br>        Move(n, a, c);<br>        Hannoi(n - 1, b, a, c);<br>    }<br>}</p>
+<p>int main()<br>{<br>    fout &lt;&lt; “以下是10层汉诺塔的解法:” &lt;&lt; endl;<br>    Hannoi(2, ‘a’, ‘b’, ‘c’);<br>    fout.close();<br>    cout &lt;&lt; “输出结果完毕。” &lt;&lt; endl;<br>    system(“pauses”);<br>    return 0;<br>}</p>
+<p>//2//<br>//容器 迭代器的使用</p>
+<p>#include <iostream></iostream></p>
+<p>#include <vector><br>using namespace std;</vector></p>
+<p>int  main()<br>{<br>    vector<int>obj;<br>    for (int i = 0; i &lt; 10; i++)<br>        obj.push_back(i);<br>    //for (int i=0; obj.size(); i++)  //尽量不要用下标的形式<br>    //    cout &lt;&lt; obj[i] &lt;&lt; “\t”;</int></p>
+<pre><code>cout &lt;&lt; endl;
+//容器
+//vector &lt;int&gt;::iterator p;
+//p = obj.begin();
+//for (; p != obj.end();p++)
+//    cout &lt;&lt; *p &lt;&lt; &quot;\t&quot;;
+//方法二，使用迭代器将容器中数据输出 
+vector&lt;int&gt;::iterator it;//声明一个迭代器，来访问vector容器，作用：遍历或者指向vector容器的元素 
+for (it = obj.begin(); it != obj.end(); it++)
+{
+    cout &lt;&lt; *it &lt;&lt; &quot; ...&quot;;
+}
+system(&quot;pause&quot;);
+</code></pre><p>}</p>
+<p>//3//<br>c++双向队列的使用<br>2019年04月10日 14:58:39 reaching_dream 阅读数 155更多<br>分类专栏： 编程 C++<br>版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。<br>本文链接：<a href="https://blog.csdn.net/weixin_42056625/article/details/89181657" target="_blank" rel="noopener">https://blog.csdn.net/weixin_42056625/article/details/89181657</a><br>首先我们先简单说明c++的双向队列<br>c++的双向队列比队列具有更加灵活的特性，可以对队列中两端的元素进行操作。<br>包含文件为    #include<deque><br>声明为：        deque<type> d;     type为声明的变量类型，其中d为声明的变量名<br>常见的操作有以下几种方式：<br>push_back:    从尾部添加元素<br>push_front:     从头部添加元素<br>pop_back:       从尾部删除元素<br>pop_front:       从头部删除元素<br>insert:              插入一个元素<br>erase               删除一个元素<br>更加具体的函数可以参考c++的官方网站对于deque的说明：<br><a href="http://www.cplusplus.com/reference/deque/deque/?kw=deque" target="_blank" rel="noopener">http://www.cplusplus.com/reference/deque/deque/?kw=deque</a></type></deque></p>
+<hr>
+<p>下面我们来看一下这里例子，这里具体的说明如何使用上面的函数，程序里具体说明了每一步的解释：</p>
+<p>#include<iostream></iostream></p>
+<p>#include<deque><br>using namespace std;</deque></p>
+<p>int main()<br>{<br>    deque<int> d;<br>    //从尾部插入0到4<br>    for (int i = 0; i &lt; 5; i++)<br>    {<br>        d.push_back(i);<br>        cout &lt;&lt; i &lt;&lt; “ “;<br>    }<br>    //从头部插入20到16<br>    for (int i = 20; i&gt;15; i–)<br>    {<br>        d.push_front(i);<br>        cout &lt;&lt; i &lt;&lt; “ “;<br>    }<br>    cout &lt;&lt; endl;<br>    //现在双向队列中按从头到位的顺序为16 17 18 19 20 0 1 2 3 4<br>    //输出双向队列中的所有元素<br>    cout &lt;&lt; “按照一头一尾的方式输出双向队列中的所有元素” &lt;&lt; endl;<br>    //正确的输出结果应该是16 4 17 3 18 2 19 1 20 0<br>    while (!d.empty())<br>    {<br>        cout &lt;&lt; d.front() &lt;&lt; “ “;<br>        d.pop_front();<br>        cout &lt;&lt; d.back() &lt;&lt; “ “;<br>        d.pop_back();<br>    }<br>    cout&lt;&lt;endl;<br>    deque<int>::iterator it = d.begin();<br>    //删除了所有元素以后我们重新对双向队列赋值<br>    for (int i = 0; i &lt; 10; i++)<br>    {<br>        d.push_back(i);<br>    }<br>    //输出现在队列中的元素<br>    for (it = d.begin(); it != d.end(); it++)<br>    {<br>        cout &lt;&lt;*it &lt;&lt; “ “;<br>    }<br>    cout &lt;&lt; endl;<br>    //接下来我们演示在第3个元素中插入5个10,然后删除倒数第2个元素</int></int></p>
+<pre><code>it = d.begin();//让it指向第三个元素
+d.insert(it+2,5,10);//这里的5代表插入的元素个数
+it = d.end();
+d.erase(it - 2);//删除倒数第二个元素
+//查看现在双向队列中的元素
+for (it = d.begin(); it != d.end(); it++)
+{
+    cout &lt;&lt;*it &lt;&lt; &quot; &quot;;
+}
+
+system(&quot;pause&quot;);
+return 0;
+</code></pre><p>}<br>下面是对应的输出截图：</p>
+<p>//4//<br>//8进制</p>
+<p>#include <iostream><br>using namespace std;</iostream></p>
+<p>int  main()<br>{<br>    int oo=0655;<br>    cout &lt;&lt; oo &lt;&lt; “\t”; //429</p>
+<pre><code>system(&quot;pause&quot;);
+</code></pre><p>}</p>
+<p>//5//<br>//小数格式</p>
+<p>#include <iostream></iostream></p>
+<p>#include <iomanip><br>using namespace std;</iomanip></p>
+<p>int  main()<br>{<br>    cout &lt;&lt; setiosflags(ios::fixed) &lt;&lt; setiosflags(ios::right);<br>    cout &lt;&lt; setw(10) &lt;&lt; 34.3434 &lt;&lt; endl;<br>    cout &lt;&lt; setw(10) &lt;&lt; 4.8989888 &lt;&lt; endl;<br>    cout &lt;&lt; setw(10) &lt;&lt; 0.5454 &lt;&lt; endl;<br>    cout &lt;&lt; setw(10) &lt;&lt; 232.7878 &lt;&lt; endl;<br>    system(“pause”);<br>}</p>
+<p>//6//<br>//if使用</p>
+<p>#include <iostream></iostream></p>
+<p>#include <iomanip><br>using namespace std;</iomanip></p>
+<p>//分段函数<br>//x&gt;200 y=89;<br>//x&gt;100 y=88;<br>//other y=87;<br>int  main()<br>{<br>    int n=340;//给定默认<br>    if (n &gt; 200)cout &lt;&lt; 89 &lt;&lt; endl;<br>    else if(n&gt;100)cout &lt;&lt; 88 &lt;&lt; endl;<br>    else cout &lt;&lt; 87 &lt;&lt; endl;<br>    system(“pause”);<br>}</p>
+<p>//7//<br>//求π</p>
+<p>#include <iostream></iostream></p>
+<p>#include <cmath><br>using namespace std;</cmath></p>
+<p>int  main()<br>{<br>    double sum = 0.0, t = 1.0, n = 1.0;<br>    int s = 1;<br>    for (; fabs(t) &gt; 1e-7; )<br>    {<br>        //cout &lt;&lt; n &lt;&lt; endl;<br>        t = s / n;<br>        sum = sum + t;<br>        s = -s;<br>        n += 2;//不能放到for的第三个条件<br>    }<br>    cout &lt;&lt; sum * 4;</p>
+<pre><code>system(&quot;pause&quot;);
+</code></pre><p>}</p>
+<p>//8//<br>//斐波那契数列</p>
+<p>#include <iostream></iostream></p>
+<p>#include <cmath><br>using namespace std;</cmath></p>
+<p>int  main()<br>{<br>    int a[100];<br>    a[0] = 1, a[1] = 1;<br>    int x = a[0] + a[1];<br>    cout &lt;&lt; a[1] &lt;&lt; endl;<br>    for (int i = 2; i &lt; 20; i++)<br>    {<br>        a[i] = a[i - 1] + a[i - 2];<br>        cout &lt;&lt; a[i] &lt;&lt; endl;<br>    }</p>
+<pre><code>system(&quot;pause&quot;);
+</code></pre><p>}</p>
+<p>//10//<br>//100-200间的素数</p>
+<p>#include <iostream></iostream></p>
+<p>#include <cmath><br>using namespace std;</cmath></p>
+<p>int  main()<br>{<br>    int num = 0;<br>    for (size_t i = 101; i &lt; 200; i+=2)<br>    {<br>        int flag = 1;<br>        for (size_t j = 2; j &lt;= sqrt(i); j++)<br>        {<br>            if (i%j == 0)<br>            {<br>                flag = 0;<br>                break;<br>            }<br>        }<br>        if (flag == 1)<br>            cout &lt;&lt; i &lt;&lt; “\t” &lt;&lt; ++num &lt;&lt; endl;<br>    }</p>
+<pre><code>system(&quot;pause&quot;);
+return 0;
+</code></pre><p>}</p>
+<p>//11//<br>//1000 0000 0内的完数</p>
+<p>#include <iostream></iostream></p>
+<p>#include <cmath><br>using namespace std;</cmath></p>
+<p>int  main()<br>{<br>    int num = 0;<br>    for (size_t i = 2; i &lt; 10000; i+=2)//太大了算不出来<br>    {<br>        int flag = 1, sum = 0;<br>        for (size_t j = 1; j &lt; i; j++)<br>        {<br>            if (i%j == 0)<br>            {<br>                sum += j;<br>                //cout &lt;&lt; sum &lt;&lt; “\t”;<br>            }<br>        }<br>        ///cout &lt;&lt; endl;<br>        if (sum==i)<br>            cout &lt;&lt; i &lt;&lt; “\t” &lt;&lt; ++num &lt;&lt; endl;<br>    }</p>
+<pre><code>system(&quot;pause&quot;);
+return 0;
+</code></pre><p>}</p>
+<p>//12//<br>//4个数中最大</p>
+<p>#include <iostream></iostream></p>
+<p>#include <cmath><br>using namespace std;</cmath></p>
+<p>int  main()<br>{<br>    int num = 0;<br>    int a = 9, b = 19, c = 1, d = 88;<br>    if (a&lt;b)<br>        a = b;<br>    if (c&gt;d)<br>        d = c;<br>    if (a&lt;d)<br>        a = d;<br>    cout &lt;&lt; “max = “ &lt;&lt; a &lt;&lt; endl;<br>    system(“pause”);<br>    return 0;<br>}</p>
+<p>//12//<br>//两队都有3人 a不与x,c不与下x,z 问对手</p>
+<p>#include <iostream></iostream></p>
+<p>#include <cmath><br>using namespace std;</cmath></p>
+<p>int  main()<br>{<br>    char x, y, z;<br>    for (x = ‘x’; x &lt;= ‘z’; x++)<br>        for (y = ‘x’; y &lt;= ‘z’; y++)<br>            if (x != y)<br>                for (z = ‘x’; z &lt; ‘z’; z++)<br>                    if (x!=z&amp;&amp;y != z)<br>                        if (x != ‘x’&amp;&amp;z != ‘x’&amp;&amp;z != ‘z’)<br>                        {<br>                            cout &lt;&lt; “a–&gt;” &lt;&lt; x &lt;&lt; endl;<br>                            cout &lt;&lt; “b–&gt;” &lt;&lt; y &lt;&lt; endl;<br>                            cout &lt;&lt; “c–&gt;” &lt;&lt; z &lt;&lt; endl;<br>                        }<br>    system(“pause”);<br>    return 0;<br>}</p>
+<p>//13//<br>//两个特殊的重载函数</p>
+<p>#include <iostream></iostream></p>
+<p>#include <cmath><br>using namespace std;<br>class MyClass<br>{<br>public:<br>    void overload()   //只能写在类里<br>    {<br>        cout &lt;&lt; “测试1” &lt;&lt; endl;<br>    }</cmath></p>
+<pre><code>void overload()const
+{
+    cout &lt;&lt; &quot;测试2&quot; &lt;&lt; endl;
+}
+</code></pre><p>private:</p>
+<p>};</p>
+<p>int  main()<br>{<br>    MyClass obj1;<br>    obj1.overload();//默认调用不加const的函数<br>    /<em>obj.overload()const;</em>///错误 不能这样调用</p>
+<pre><code>MyClass const obj2;
+obj2.overload();
+
+system(&quot;pause&quot;);
+return 0;
+</code></pre><p>}</p>
+<p>//14//<br>//函数模板</p>
+<p>#include <iostream></iostream></p>
+<p>#include <cmath><br>using namespace std;</cmath></p>
+<p>template <typename t><br>void f(T a,T b)<br>{<br>    T c = a - b;<br>    cout &lt;&lt; c &lt;&lt; endl;<br>}</typename></p>
+<p>int  main()<br>{<br>    f(34, 444);<br>    f(‘g’,’a’);<br>    system(“pause”);<br>    return 0;<br>}</p>
+<p>//15//<br>//类模板 及在类外定义模板函数</p>
+<p>#include <iostream></iostream></p>
+<p>#include <cmath><br>using namespace std;</cmath></p>
+<p>template <class t><br>class MyClass<br>{<br>public:<br>    MyClass(T aa, T bb) { a = aa; b = bb; }<br>    T a;<br>    T b;<br>    void f1()<br>    {<br>        cout &lt;&lt; a &lt;&lt; endl &lt;&lt; b &lt;&lt; endl;<br>    }<br>    T f2();<br>private:</class></p>
+<p>};</p>
+<p>template <class t><br>T MyClass<t> :: f2()<br>{<br>    T c;<br>    c = a + b;<br>    cout &lt;&lt; c;<br>    return c;<br>}<br>int  main()<br>{<br>    MyClass <int> obj(44, 43434);<br>    obj.f1();<br>    obj.f2();<br>    system(“pause”);<br>    return 0;<br>}</int></t></class></p>
+<p>//17//<br>//不加头文件使用系统函数</p>
+<p>#include <iostream><br>int  main()<br>{<br>    double sin(double x);<br>    std::cout &lt;&lt; sin(3.14);<br>    system(“pause”);<br>    return 0;<br>}</iostream></p>
+<p>//18//<br>//数字转字符串</p>
+<p>#include <iostream><br>using namespace std;</iostream></p>
+<p>int f(int a)<br>{<br>    char c;<br>    if (a &lt; 10)<br>    {</p>
+<pre><code>    cout &lt;&lt; a;
+    return a;
+}
+else
+    f(a / 10);
+c = (a % 10)+48;   //原来的数字对应实际的ASCII ，如个位数为4，ASCII为4，在此基础上增加48转为对应的ASCII的数字
+cout &lt;&lt; c;
+</code></pre><p>}<br>int  main()<br>{<br>    int a;<br>    a = 1234;</p>
+<pre><code>cout &lt;&lt; a &lt;&lt; &quot;表示成字符串为：&quot;;
+f(a);
+system(&quot;pause&quot;);
+return 0;
+</code></pre><p>}</p>
+<p>//20//<br>//调用函数 求i的阶乘</p>
+<p>#include <iostream><br>using namespace std;</iostream></p>
+<p>int f(int a)<br>{<br>    int res= a;<br>    if (a == 1)<br>        return a;<br>    else<br>    {<br>        res *= f(a-1);<br>        return res;<br>    }<br>}<br>int  main()<br>{<br>    int a = 5;<br>    cout &lt;&lt; f(a) &lt;&lt; ‘\t’;<br>    system(“pause”);<br>    return 0;<br>}</p>
+<p>//21//<br>//调用函数 求i^2 求和</p>
+<p>#include <iostream><br>using namespace std;</iostream></p>
+<p>int f(int a)   //函数内if和else都要有返回值<br>{<br>    int res= a;<br>    if (a == 1)<br>        return a;<br>    else<br>    {<br>        res *= res;<br>        res += f(a-1);<br>        return res;<br>    }<br>}<br>int  main()<br>{<br>    int a = 4;<br>    cout &lt;&lt; f(a) &lt;&lt; ‘\t’;<br>    system(“pause”);<br>    return 0;<br>}</p>
+<p>//23//<br>//最大公约数 最小公倍数</p>
+<p>#include <iostream><br>using namespace std;</iostream></p>
+<p>int f1(int a,int b)//最大公约数<br>{<br>    int temp;<br>    if (a &lt; b)<br>    {<br>        temp = a;<br>        a = b;<br>        b = temp;<br>    }<br>    if ((a % b) == 0)<br>    {<br>        return b;<br>    }<br>    else<br>    {<br>        return f1(b, a - b);<br>    }<br>}</p>
+<p>int f2(int a,int b)//最小公倍数<br>{<br>    int res;<br>    res = a*b / f1(a, b);  //原数的乘积除以最大公约数<br>    return res;<br>}</p>
+<p>int  main()<br>{<br>    int a = 40;<br>    int b = 20015;<br>    cout &lt;&lt; f1(a, b) &lt;&lt; ‘\t’;<br>    cout &lt;&lt; f2(a,b) ;<br>    system(“pause”);<br>    return 0;<br>}</p>
+<p>//24//<br>//cin.getline  单独无法使用</p>
+<p>#include <iostream></iostream></p>
+<p>#include <string><br>using namespace std;</string></p>
+<p>int  main()<br>{<br>    char a[34] = {“dfdf”};<br>    cin.getline(a,33);<br>    cout &lt;&lt; a;<br>    system(“pause”);<br>    return 0;<br>}</p>
+<p>//25//<br>//二维数组指针</p>
+<p>#include <iostream></iostream></p>
+<p>#include <string></string></p>
+<p>#pragma warning (disable :4996)<br>using namespace std;</p>
+<p>int  main()<br>{<br>    //方式1<br>    int a[2][3] = { 23,34 };<br>    int <em>p;<br>    p = a[0];<br>    cout &lt;&lt; p[0] &lt;&lt; endl;//23<br>    cout &lt;&lt; </em>p &lt;&lt; endl;//23</p>
+<pre><code>//方式2
+int *p1[3] = { a[0] ,a[1]};
+cout &lt;&lt;p[0];//23
+
+//方式3
+int(*pp)[3] = a;
+cout &lt;&lt; p[0];//23
+cout &lt;&lt; (*pp)[0];//23
+//cout &lt;&lt; p[0][1];//23   //error
+
+system(&quot;pause&quot;);
+return 0;
+</code></pre><p>}</p>
+<p>//26//<br>//const指针</p>
+<p>#include <iostream></iostream></p>
+<p>#include <string></string></p>
+<p>#pragma warning (disable :4996)<br>using namespace std;</p>
+<p>int  main()<br>{<br>    //No1 指向变量的指针变量<br>    int a = 23;<br>    const int <em>pa = &a;//不能通过指针修改原来指向的变量的值<br>    //</em>p = 34;  //error 错误信息 ：必须是可赋值的左值</p>
+<pre><code>//No2 常指针
+int b = 23;
+int bb = 34;
+int * const pb = &amp;a;//不能修改指针指向
+//pb = &amp;bb;    //error 错误信息 ：必须是可赋值的左值
+
+
+//No3
+//以上两种的综合
+system(&quot;pause&quot;);
+return 0;
+</code></pre><p>}</p>
+<p>//27//<br>//指向对象成员函数的指针</p>
+<p>#include “myiostream.h”</p>
+<p>#pragma warning (disable :4996)<br>using namespace std;</p>
+<p>class MyClass<br>{<br>public:<br>    void f();<br>private:</p>
+<p>};</p>
+<p>void MyClass ::f()<br>{<br>    cout &lt;&lt; “lalala”;<br>}</p>
+<p>int  main()<br>{<br>    //1<br>    void (MyClass :: *p2)(); //指向对象成员函数的指针 的定义<br>    //p2 = &amp;MyClass::f();  //error<br>    p2 = &amp;MyClass::f;       //注:无括号</p>
+<pre><code>//2
+//直接写是指向对象的指针:
+MyClass *pp;
+
+system(&quot;pause&quot;);
+return 0;
+</code></pre><p>}</p>
+<p>//28//<br>//对象的动态建立与初始化</p>
+<p>#include “myiostream.h”</p>
+<p>#pragma warning (disable :4996)<br>using namespace std;</p>
+<p>class MyClass<br>{<br>public:<br>    MyClass(){}<br>    MyClass(int aa) { a = aa; }<br>    void f();<br>private:<br>    int a;<br>};</p>
+<p>void MyClass ::f()<br>{<br>    cout &lt;&lt; “lalala” &lt;&lt; a;<br>}<br>int  main()<br>{<br>    MyClass *pp;<br>    pp = new MyClass;</p>
+<pre><code>MyClass *pp2;
+pp2 = new MyClass(666);
+pp2-&gt;f();
+system(&quot;pause&quot;);
+return 0;
+</code></pre><p>}</p>
+<p>//29//<br>//普通函数作为友元</p>
+<p>#include “myiostream.h”</p>
+<p>#pragma warning (disable :4996)<br>using namespace std;</p>
+<p>class MyClass<br>{<br>public:<br>    MyClass(){}<br>    MyClass(int aa) { a = aa; }<br>    void f();<br>    friend void myfriend(MyClass &amp; obj);<br>private:<br>    int a;<br>};</p>
+<p>void MyClass ::f()<br>{<br>    cout &lt;&lt; “lalala” &lt;&lt; a;<br>}</p>
+<p>void myfriend(MyClass &amp; obj)<br>{<br>    cout &lt;&lt; “开心” &lt;&lt; obj.a;<br>}</p>
+<p>int  main()<br>{<br>    MyClass *pp;<br>    pp = new MyClass;</p>
+<pre><code>MyClass *pp2;
+pp2 = new MyClass(666);
+pp2-&gt;f();
+
+MyClass obj(888);
+myfriend(obj);
+
+system(&quot;pause&quot;);
+return 0;
+</code></pre><p>}</p>
+<p>//30//<br>//原来的字符个数，加上%d代表的个数</p>
+<p>#include&lt;stdio.h&gt;</p>
+<p>int main()<br>{</p>
+<pre><code>int x=77797;
+x=printf(&quot;tt%d&quot;,x);//x是输出的字符的个数
+//原来的字符个数，加上%d代表的个数
+
+printf(&quot;%d&quot;,x);
+
+
+
+}
+</code></pre><p>//31//<br>//静态成员函数使用<br>//一般来说<br>//静态成员函数用来调用静态成员（非绝对）<br>//非静态成员函数来调用非静态成员（非绝对）</p>
+<p>#include “myiostream.h”</p>
+<p>#pragma warning (disable :4996)<br>using namespace std;</p>
+<p>class MyClass<br>{<br>public:<br>    MyClass(){}<br>    MyClass(int aa) :a(aa) {}<br>    void static f();<br>    static int sum;<br>    static int count;<br>private:<br>    int a;</p>
+<p>};</p>
+<p>void MyClass ::f()<br>{<br>    cout &lt;&lt; sum/count ;<br>}</p>
+<p>int MyClass::sum = 50;<br>int MyClass::count = 50;</p>
+<p>int  main()<br>{<br>    cout &lt;&lt; MyClass::sum;<br>    MyClass::f();<br>    system(“pause”);<br>    return 0;<br>}</p>
+<p>//32//<br>//“+-*/“ 成员函数重载 实现复数运算</p>
+<p>#include “myiostream.h”</p>
+<p>#pragma warning (disable :4996)<br>using namespace std;</p>
+<p>class MyClass<br>{<br>public:<br>    MyClass(){}<br>    MyClass(double real,double image) :a(real),b(image) {}<br>    MyClass operator+(MyClass &amp;c2);<br>    MyClass MyClass::operator-(MyClass &amp;c2);<br>    MyClass MyClass::operator*(MyClass &amp;c2);<br>    MyClass MyClass::operator/(MyClass &amp;c2);<br>    void disp()<br>    {<br>        if (b &gt; 0)<br>        {<br>            cout &lt;&lt; “(“ &lt;&lt; a &lt;&lt; “+” &lt;&lt; b &lt;&lt; “i)” &lt;&lt; endl;<br>        }<br>        else<br>        {<br>            cout &lt;&lt; “(“ &lt;&lt; a &lt;&lt; “” &lt;&lt; b &lt;&lt; “i)” &lt;&lt; endl;<br>        }<br>    }<br>private:<br>    double a;<br>    double b;<br>};</p>
+<p>MyClass MyClass::operator+(MyClass &amp;c2)<br>{<br>    MyClass temp;<br>    temp.a = a + c2.a;<br>    temp.b = b + c2.b;<br>    return temp;<br>}</p>
+<p>MyClass MyClass::operator-(MyClass &amp;c2)<br>{<br>    MyClass temp;<br>    temp.a = a - c2.a;<br>    temp.b = b - c2.b;<br>    return temp;<br>}</p>
+<p>MyClass MyClass::operator<em>(MyClass &amp;c2)<br>{<br>    MyClass temp;<br>    temp.a = a </em> c2.a - b <em> c2.b;<br>    temp.b = b </em> c2.a + a * c2.b;<br>    return temp;<br>}</p>
+<p>MyClass MyClass::operator/(MyClass &amp;c2)<br>{<br>    MyClass temp;<br>    double c;<br>    c = c2.a<em>c2.a + c2.b</em>c2.b;<br>    temp.a = a <em> c2.a + b </em> c2.b;<br>    temp.a = temp.a / c;</p>
+<pre><code>temp.b = b * c2.a - a * c2.b;
+temp.b = temp.b / c;
+
+return temp;
+</code></pre><p>}</p>
+<p>int  main()<br>{<br>    MyClass obj1(23, 44), obj2(111, 222), obj3;<br>    obj3 = obj1 + obj2;<br>    obj3 = obj1 - obj2;<br>    obj3 = obj1 / obj2;<br>    obj3.disp();<br>    system(“pause”);<br>    return 0;<br>}</p>
+<p>//显示调用成员函数重载符<br>//int  main()<br>//{<br>//    MyClass obj1(1, 1), obj2(2, 2), obj3;<br>//    obj3 = obj2.operator+(obj1);<br>//    obj3.disp();<br>//    system(“pause”);<br>//    return 0;<br>//}</p>
+<p>//33//<br>//“+-*/“   友元重载 实现复数运算</p>
+<p>#include “myiostream.h”</p>
+<p>#pragma warning (disable :4996)<br>using namespace std;</p>
+<p>class MyClass<br>{<br>public:<br>    MyClass(){}<br>    MyClass(double real,double image) :a(real),b(image) {}<br>    friend MyClass operator+(MyClass &amp;, MyClass &amp;);<br>    friend MyClass operator-(MyClass &amp;, MyClass &amp;);<br>    friend MyClass operator*(MyClass &amp;, MyClass &amp;);<br>    friend MyClass operator/(MyClass &amp;, MyClass &amp;);</p>
+<pre><code>void disp()
+{
+    if (b &gt; 0)
+    {
+        cout &lt;&lt; &quot;(&quot; &lt;&lt; a &lt;&lt; &quot;+&quot; &lt;&lt; b &lt;&lt; &quot;i)&quot; &lt;&lt; endl;
+    }
+    else
+    {
+        cout &lt;&lt; &quot;(&quot; &lt;&lt; a &lt;&lt; &quot;&quot; &lt;&lt; b &lt;&lt; &quot;i)&quot; &lt;&lt; endl;
+    }
+}
+</code></pre><p>private:<br>    double a;<br>    double b;<br>};</p>
+<p>MyClass operator+(MyClass &amp;c1, MyClass &amp;c2)<br>{<br>    MyClass temp;<br>    temp.a = c1.a + c2.a;<br>    temp.b = c1.b + c2.b;<br>    return temp;<br>}</p>
+<p>MyClass operator-(MyClass &amp;c1, MyClass &amp;c2)<br>{<br>    MyClass temp;<br>    temp.a = c1.a - c2.a;<br>    temp.b = c1.b - c2.b;<br>    return temp;<br>}</p>
+<p>MyClass operator<em>(MyClass &amp;c1, MyClass &amp;c2)<br>{<br>    MyClass temp;<br>    temp.a = c1.a </em> c2.a - c1.b <em> c2.b;<br>    temp.b = c1.b </em> c2.a + c1.a * c2.b;<br>    return temp;<br>}</p>
+<p>MyClass operator/(MyClass &amp;c1, MyClass &amp;c2)<br>{<br>    MyClass temp;<br>    double c;<br>    c = c2.a<em>c2.a + c2.b</em>c2.b;<br>    temp.a = c1.a <em> c2.a + c1.b </em> c2.b;<br>    temp.a = temp.a / c;<br>    temp.b = c1.b <em> c2.a - c1.a </em> c2.b;<br>    temp.b = temp.b / c;<br>    return temp;<br>}</p>
+<p>int  main()<br>{<br>    MyClass obj1(23, 44), obj2(111, 222), obj3;<br>    obj3 = obj1 + obj2;<br>    obj3 = obj1 - obj2;<br>    obj3 = obj1 / obj2;<br>    obj3 = obj1 * obj2;<br>    obj3.disp();<br>    system(“pause”);<br>    return 0;<br>}</p>
+<p>//32//<br>//“== &gt;”   友元重载 实现复数运算</p>
+<p>#include “myiostream.h”</p>
+<p>#pragma warning (disable :4996)<br>using namespace std;</p>
+<p>class MyClass<br>{<br>public:<br>    MyClass(){}<br>    MyClass(string str11) :str1(str11){}<br>    friend bool operator==(MyClass &amp;, MyClass &amp;);<br>    friend int operator&gt;(MyClass &amp;, MyClass &amp;);</p>
+<pre><code>void disp()
+{
+    cout &lt;&lt; &quot;string:&quot; &lt;&lt; str1 &lt;&lt; endl;
+}
+</code></pre><p>private:<br>    string str1;<br>};</p>
+<p>bool operator==(MyClass &amp;obj1, MyClass &amp;obj2)<br>{<br>    if(obj1.str1 == obj2.str1)<br>        return 1;<br>    else<br>        return 0;<br>}</p>
+<p>int operator&gt;(MyClass &amp;obj1, MyClass &amp;obj2)<br>{<br>    if (obj1.str1 &gt; obj2.str1)<br>        return 1;<br>    else if (obj1.str1 &lt; obj2.str1)<br>        return 2;<br>    else return 0;<br>}</p>
+<p>int  main()<br>{<br>    MyClass obj1(“good”), obj2(“well”), obj3;<br>    int flag = obj1 &gt; obj2;<br>    obj1.disp();<br>    obj2.disp();<br>    cout &lt;&lt; “第” &lt;&lt; flag &lt;&lt; “大” &lt;&lt; endl;</p>
+<pre><code>system(&quot;pause&quot;);
+return 0;
+</code></pre><p>}</p>
+<p>//33//<br>//“++” 成员函数重载 实现自加（前置 后置）</p>
+<p>#include “myiostream.h”</p>
+<p>#pragma warning (disable :4996)<br>using namespace std;</p>
+<p>class MyClass<br>{<br>public:<br>    MyClass() {}<br>    MyClass(double x) :a(x){}<br>    MyClass operator++();<br>    MyClass operator++(int);<br>    double a;<br>private:</p>
+<p>};</p>
+<p>MyClass MyClass::operator++()<br>{<br>    ++a;<br>    return *this;<br>}</p>
+<p>MyClass MyClass::operator++(int)<br>{<br>    a++;<br>    return *this;<br>}</p>
+<p>int  main()<br>{<br>    MyClass obj1(665);<br>    ++obj1;<br>    cout &lt;&lt; obj1.a; //666<br>    obj1++;<br>    cout &lt;&lt; obj1.a; //667<br>    system(“pause”);<br>    return 0;<br>}</p>
+<p>注意问题：<br>重载符必须和原来的操作对象个数相同，双目重载时还是双目，单目重载时是单目</p>
+<p>//32//<br>//选择法排序（10个数）</p>
+<p>#include “myiostream.h”</p>
+<p>#pragma warning (disable :4996)<br>using namespace std;</p>
+<p>void f(int *a)//<br>{<br>    int min, t;<br>    size_t j;<br>    size_t i;<br>    for (i = 0; i &lt; 10-1; i++)<br>    {<br>        min = i;<br>        for (j = i+1; j &lt; 10; j++)<br>        {<br>            if (a[min] &gt; a[j])<br>                min = j;<br>        }<br>        swap(a[min], a[i]);</p>
+<pre><code>}
+
+for (size_t i = 0; i &lt; 10; i++)
+{
+    cout &lt;&lt; a[i] &lt;&lt; &quot;\t&quot;;
+}
+</code></pre><p>}</p>
+<p>void swap(int&amp;a, int &amp;b)<br>{<br>    int t=0;  //需要赋初值<br>    a = t;<br>    t = b;<br>    b = t;<br>}</p>
+<p>int  main()<br>{<br>    int a[10] = { 23,45,56,35,34,65,57,23,1,7 };<br>    f(a);<br>    system(“pause”);<br>    return 0;<br>}</p>
+<p>//33//<br>//鞍点</p>
+<p>#include “myiostream.h”</p>
+<p>#pragma warning (disable :4996)<br>using namespace std;</p>
+<p>void f(int (*a)[3])//<br>{<br>    int flag = 1;<br>    for (size_t i = 0; i &lt; 3; i++)<br>    {<br>        int max = a[i][0], maxj = 0; //假设行最大值为max 最大值的下标为maxj<br>        for (size_t j = 0; j &lt; 3; j++)<br>        {<br>            if (max &lt; a[i][j])<br>            {<br>                max = a[i][j];<br>                maxj = j;<br>            }<br>        }<br>        flag = 1; //假设每一行的最大值都有可能是鞍点<br>        for (int k = 0; k &lt; 3; k++)<br>        {<br>            if (max &gt; a[k][maxj])<br>            {<br>                flag = 0;<br>                continue;//次句可不要 增加只是减少运算次数，意为只要出现小于max的数停止本次计算<br>            }<br>        }<br>        if (flag)<br>        {<br>            cout &lt;&lt; “鞍点坐标为：” &lt;&lt; i + 1 &lt;&lt; “,” &lt;&lt; maxj + 1;<br>            cout &lt;&lt; “   其数值为：” &lt;&lt; max;<br>        }<br>    }<br>}</p>
+<p>int  main()<br>{<br>    int a[3][3] = { 1,2,3,1,2,4,2,2,5};<br>    f(a);<br>    system(“pause”);<br>    return 0;<br>}</p>
+<p>//34//<br>//折半查找(二分法) 一串数已经有序 则查找item在一串数中的位置比较次数为logn+1</p>
+<p>#include “myiostream.h”</p>
+<p>#pragma warning (disable :4996)<br>using namespace std;</p>
+<p>//非递归<br>void f1(int *a,int low,int high,int key)//a[]数组 key为要查找的数<br>{<br>    int mid;<br>    while (low&lt;=high)<br>    {<br>        mid = (low + high) / 2;<br>        if (a[mid] == key)<br>        {<br>            cout &lt;&lt; key &lt;&lt; “下标为（从1开始）：” &lt;&lt; mid + 1 &lt;&lt; endl;<br>            break;<br>        }<br>        else if (a[mid] &lt; key)<br>        {<br>            low = mid + 1;<br>        }<br>        else high = mid - 1;<br>    }<br>}</p>
+<p>//递归<br>int f2(int *a, int low, int high, int key)//a[]数组 key为要查找的数<br>{<br>    int mid;<br>    if (low &gt; high)<br>        return -1;<br>    else<br>    {<br>        mid = (low + high) / 2;<br>        if (a[mid] == key)<br>        {<br>            cout &lt;&lt; key &lt;&lt; “下标为（从1开始）：” &lt;&lt; mid + 1 &lt;&lt; endl;<br>            return 1;<br>        }<br>        else if (a[mid] &lt; key)<br>        {<br>            f2(a, mid + 1, high, 8);<br>        }<br>        else f2(a, low, mid - 1, 8);<br>    }<br>}</p>
+<p>int  main()<br>{<br>    int a[10]= { 1,2,3,4,5,6,7,8,9,10};<br>    f1(a,0,9,8); //方法1<br>    f2(a, 0, 9, 8);// //方法2<br>    system(“pause”);<br>    return 0;<br>}</p>
+<p>//35//<br>//指针运用：后移部分数据<br>//如后移1,4<br>//移动前：1    4    4    7    8    4<br>//移动后：4    7    8    4    1    4</p>
+<p>#include “myiostream.h”</p>
+<p>#pragma warning (disable :4996)<br>using namespace std;</p>
+<p>void f(int <em>a,int n,int m)//a[]数组 n为数据总数 m为后移个数<br>{<br>    int </em>p;<br>    int a_end;<br>    a_end = <em>(a+n-1);<br>    //步骤1：前移后面n-1个元素<br>    for (p = a + n - 1; p &gt; a; p–)<br>    {
+        </em>p = <em>(p - 1);<br>    }<br>    //步骤2：开始时的第一个元素放最后
+    </em>a = a_end;<br>    //步骤3：一共移动m次<br>    m–;<br>    if (m &gt; 0)f(a, n, m);<br>}</p>
+<p>int  main()<br>{<br>    int a[10]= { 1,2,3,4,5,6,7,8,9,10};<br>    f(a,10,3);<br>    for (size_t i = 0; i &lt; 10; i++)<br>    {<br>        cout &lt;&lt; a[i] &lt;&lt; “\t”;<br>    }<br>    system(“pause”);<br>    return 0;<br>}</p>
+<p>//36//<br>//指针运用：约瑟夫 （报数问题）<br>//从第k个人报数，凡报到3的人退出。问最后剩余的那一人的编号</p>
+<p>#include “myiostream.h”</p>
+<p>#pragma warning (disable :4996)<br>using namespace std;</p>
+<p>void f(int <em>a,int n)// a[]为一圈人的编号 n总人数 k为开始报数的编号 m为每次报到出圈的人3<br>{<br>    int i, m, k;<br>    m = 0; i = 0; k = 0;//初始化<br>    int </em>p = a;<br>    while (m &lt; n - 1)//m累加是出圈总人数(在数组中重置为0即出圈)<br>    {<br>        if (<em>(p + i) != 0)<br>        {<br>            k++;<br>        }<br>        if (k == 3)<br>        {
+            </em>(p + i) = 0;<br>            k = 0;<br>            m++;<br>        }<br>        i++;<br>        if (i == n)i = 0; //次句相当于循环，即到末尾时重置<br>    }<br>    while (<em>p == 0)<br>    {<br>        p++;<br>    }<br>    cout &lt;&lt; </em>p;</p>
+<p>}</p>
+<p>int  main()<br>{<br>    int a[8]= { 1,2,3,4,5,6,7,8};//给每个人编号(从1开始)，假设共10个人<br>    f(a,8);<br>    system(“pause”);<br>    return 0;<br>}</p>
+<p>//37//<br>//字典排序 <a href="https://blog.csdn.net/qq_34672688/article/details/79557380" target="_blank" rel="noopener">https://blog.csdn.net/qq_34672688/article/details/79557380</a><br>//总结得出字典排序算法四步法：<br>//<br>//字典排序：<br>//第一步：从右至左找第一个左邻小于右邻的数，记下位置i，值list[a]<br>//第二部：从右边往左找第一个右边大于list[a]的第一个值，记下位置j，值list[b]<br>//第三步：交换list[a]和list[b]的值<br>//第四步：将i以后的元素重新按从小到大的顺序排列<br>//<br>//<br>//举例：125643的下一个字典序列<br>//第一步：右边值大于左边的3&lt;4, 4&lt;6, 6&gt;5, 则i = 2（从0开始），list[a] = 5<br>//    第二步：从右往左找出第一个右边大于list[a] = 5的值，找到6&gt;5, j = 3; list[b] = 6;<br>//第三步：交换list[a]和list[b]的值，序列125643-&gt;126543<br>//第四步：将位置2以后的元素重新排序, 126543-&gt;126345;<br>//结束： 126345即125643的下一个序列 </p>
+<p>#include “myiostream.h”</p>
+<p>#pragma warning (disable :4996)<br>using namespace std;<br>//注意宏函数不能不能写为swap(int a,int b)<br>//注意宏函数{}不能换行</p>
+<p>#define swap(a,b) {int t;t = a;a = b;b = t;} </p>
+<p>//冒泡排序对数组中的一段数据进行排序<br>void sort(int *a, int start, int end)//形参：数组 开始位置（从0开始） 结束位置<br>{<br>    for (size_t i = 0; i &lt;= end - start; i++)<br>    {<br>        for (size_t j = start; j &lt; end - i; j++)<br>        {<br>            if (a[j] &gt; a[j+1])<br>                swap(a[j], a[j+1]);<br>        }<br>    }<br>}</p>
+<p>void 字典排序(int <em>a, int n)<br>{<br>    int 阶乘=1;<br>    int xx, jj;//记录要交换的位置<br>    size_t j;<br>    size_t i;<br>    size_t k;<br>    for (i = 1; i &lt;= n; i++)<br>    {<br>        阶乘 </em>= i;<br>    }<br>    sort(a,0,n-1);<br>    for (i = 0; i &lt; 阶乘; i++)<br>    {<br>        for (j = 0; j &lt; n; j++)<br>        {<br>            cout &lt;&lt; a[j];<br>        }<br>        cout &lt;&lt; endl;<br>        for (k = n - 1; k &gt; 0; k–)//字典步骤1 (不能写成k &gt;= 0)<br>        {<br>            if (a[k - 1] &lt; a[k])<br>            {<br>                xx = k-1;//不能写成xx=k<br>                break;<br>            }<br>        }<br>        for (k = n - 1; k &gt;= 0; k–)//字典步骤2<br>        {<br>            if (a[k] &gt; a[xx])<br>            {<br>                jj = k;<br>                break;<br>            }<br>        }<br>        swap(a[xx], a[jj]);//字典步骤3<br>        //注意是xx后的元素进行排序 xx+1<br>        sort(a, xx+1, n - 1);////字典步骤4<br>    }<br>}</p>
+<p>int  main()<br>{<br>    int a[4]= {1,2,3,4};//给每个人编号(从1开始)，假设共10个人<br>    字典排序(a,4);<br>    system(“pause”);<br>    return 0;<br>}</p>
+<p>//38//<br>//3个等长字符串排序输出</p>
+<p>#include <iostream>  </iostream></p>
+<p>#include <string><br>using namespace std;  </string></p>
+<p>//冒泡 string方式<br>void sort(string a[3])<br>{<br>    for (size_t j = 0; j &lt; 3-1; j++)<br>    {<br>        for (size_t i = 0; i &lt; 3-j-1; i++)<br>        {<br>            string temp;<br>            if (a[i] &gt; a[i + 1])<br>            {<br>                temp = a[i];<br>                a[i] = a[i + 1];<br>                a[i + 1] = temp;<br>            }</p>
+<pre><code>    }
+}
+</code></pre><p>}</p>
+<p>int  main()<br>{<br>    string a[3] = { “zrer”,”mfgs”,”pppp” };<br>    sort(a);<br>    for (size_t i = 0; i &lt; 3; i++)<br>    {<br>        cout &lt;&lt; a[i] &lt;&lt; “\t”;<br>    }<br>    system(“pause”);<br>    return 0;<br>}</p>
+<p>//40//<br>//计算积分 一元积分 二重积分 </p>
+<p>#include <iostream>  </iostream></p>
+<p>#include <string></string></p>
+<p>#include <cmath><br>using namespace std;  </cmath></p>
+<p>//被积函数<br>double f(double x)<br>{<br>    return pow(2.71,x);<br>}</p>
+<p>//被积函数(重载，计算二重积分)<br>double f(double x, double y)<br>{<br>    return x*y;<br>}</p>
+<p>//一元积分 微元：矩形 = 长<em>宽<br>//积分=Sigma(a+(b-a)/n</em>i)b-a)/n<br>void f1(double a, double b, int n) //积分下限 积分上限 分割份数<br>{<br>    //累加法求面积(定积分定的精确定义)<br>    double s = 0.0;<br>    double t = (b - a) / n;<br>    for (size_t i = 0; i &lt; n; i++)<br>    {<br>        s += f(a + i<em>t)</em>t;<br>    }<br>    cout &lt;&lt; s &lt;&lt; endl;<br>}</p>
+<p>//二重积分 SigmaSigma(a+(b-a)/n<em> i </em> (b-a)/n,c+(d-c)/n<em>i))d-c)/n<br>void f2(double a, double b, double c, double d, int n)//x,y的下限 上限<br>{//精度较高 时计算速度较慢<br>    //累加法求面积(定积分定的精确定义)<br>    double s = 0.0;<br>    double t1 = (b - a) / n;<br>    double t2 = (d - c) / n;<br>    for (size_t i = 0; i &lt; n; i++)<br>    {<br>        for (size_t j = 0; j &lt; n; j++)<br>        {<br>            s += f(a + i</em>t1, c + j<em>t2)</em>t1*t2;<br>        }<br>    }<br>    cout &lt;&lt; s &lt;&lt; endl;<br>}</p>
+<p>int  main()<br>{<br>    f1(0, 2, 100000);<br>    f2(0, 1, 0, 1, 1000);<br>    system(“pause”);<br>    return 0;<br>}</p>
+<p>//41//<br>//输入一串字符 输出字符中的数字及个数 如sd 123hfj555sdf333sfhj 输出123 555 333 3个</p>
+<p>#include <iostream>  </iostream></p>
+<p>#include <string></string></p>
+<p>#include <cmath><br>using namespace std;  </cmath></p>
+<p>void convert(char <em>a,int n)//字符转数字,形参为字符串及长度<br>{<br>    int sum=0;<br>    for (size_t i = 0; i &lt; n; i++)<br>    {<br>        sum += (a[i]-48) </em> pow(10, n - 1 - i);<br>    }<br>    cout &lt;&lt; sum &lt;&lt; endl;<br>}<br>void f(char <em>a)<br>{<br>    char </em>p, <em>r;<br>    int i=0;//统计每次找到的数字的位数<br>    for (p = a; </em>p != ‘\0’; p++)<br>    {<br>        if ((<em>p &gt;= ‘0’)&amp;&amp;(</em>p &lt;= ‘9’))<br>        {<br>            i++;<br>        }<br>        else if( (<em>p != ‘0’) &amp;&amp; (</em>p != ‘9’))<br>        {<br>            if (i &gt; 0)<br>            {<br>                r = p - i;<br>                convert(r, i);<br>                i = 0;<br>            }<br>        }<br>        if (*(p+1) == ‘\0’) //不能写为else if 这是一个特殊情况<br>        {<br>            if (i &gt; 0)<br>            {<br>                r = p - i + 1; //此处和上边有细微差别<br>                convert(r, i);<br>                i = 0;<br>            }<br>        }<br>    }<br>}</p>
+<p>int  main()<br>{<br>    char a[] = { “ddfn2334nfgjn78” };<br>    f(a);<br>    system(“pause”);<br>    return 0;<br>}</p>
+<p>//42//<br>//ABCDEFG7位医生 每人每周值班一次 要求：<br>/<em><br>（1）A比C晚一天<br>（2）D比E晚两天<br>（3）G比B晚3天<br>（4）F在B与C之间，F在周四
+</em>/</p>
+<p>#include <iostream>  </iostream></p>
+<p>#include <cmath><br>using namespace std;  </cmath></p>
+<p>enum MyEnum<br>{<br>    sun=1, mon, tus, wed, thu, fri, sat //此处结尾无分号<br>};</p>
+<p>//根据每位医生的限制条件<br>void f()<br>{<br>    int f = thu;//F医生<br>    for (size_t a = sun; a &lt;= sat; a++)<br>        if (a != f)<br>            for (int b = sun; b &lt;= sat; b++)<br>                if (b != a&amp;&amp;f &gt; b)<br>                    for (int c = sun; c &lt;= sat; c++)<br>                        if (c != a&amp;&amp;c &gt; f&amp;&amp;c + 1 == a&amp;&amp;c!=b)<br>                            for (int d = sun; d &lt;= sat; d++)<br>                                if (d != a&amp;&amp;d!=b&amp;&amp;d!=c&amp;&amp;a!=f)<br>                                    for (int e = sun; e &lt;= sat; e++)<br>                                        if (e != a&amp;&amp;e!=b&amp;&amp;e!=c&amp;&amp;d == e + 2&amp;&amp;e!=f)<br>                                            for (int g = sun; g &lt;= sat; g++)<br>                                                if(g!=a&amp;&amp;g==b+3&amp;&amp;g!=c&amp;&amp;g!=d&amp;&amp;g!=e&amp;&amp;g!=f)<br>                                                cout &lt;&lt; a &lt;&lt; “,” &lt;&lt; b &lt;&lt; “,” &lt;&lt; c &lt;&lt; “,” &lt;&lt; d &lt;&lt; “,” &lt;&lt; e &lt;&lt; “,” &lt;&lt; f &lt;&lt; “,” &lt;&lt; g &lt;&lt; endl;</p>
+<p>}</p>
+<p>int  main()<br>{<br>    f();<br>    system(“pause”);<br>    return 0;<br>}</p>
+<p>//43//<br>//重载流提取和流输入 &lt;&lt; &gt;&gt;</p>
+<p>#include <iostream>  </iostream></p>
+<p>#include <cmath><br>using namespace std;  </cmath></p>
+<p>class MyClass<br>{<br>public:<br>    MyClass(int aa):a(aa){}<br>    friend istream &amp;operator&gt;&gt;(istream&amp;, MyClass&amp;);<br>    friend ostream &amp;operator&lt;&lt;(ostream&amp;, MyClass&amp;);</p>
+<p>private:<br>    int a;<br>};</p>
+<p>istream &amp;operator &gt;&gt;(istream&amp;mycin, MyClass&amp;obj1)<br>{<br>    mycin &gt;&gt; obj1.a;<br>    return mycin;<br>}<br>ostream &amp;operator&lt;&lt;(ostream&amp;mycout, MyClass&amp;obj2)<br>{<br>    mycout &lt;&lt; “这是一个对象输出:” &lt;&lt; obj2.a &lt;&lt; endl;<br>    return mycout;<br>}<br>int  main()<br>{<br>    MyClass obj(666);<br>    cin &gt;&gt; obj;<br>    cout &lt;&lt; obj;<br>    system(“pause”);<br>    return 0;<br>}</p>
+<p>//43//<br>//转换构造函数</p>
+<p>#include <iostream><br>using namespace std;  </iostream></p>
+<p>class MyClass<br>{<br>public:<br>    MyClass(){}<br>    MyClass(int a) { real = a; imag = 0; }//转换构造 只有一个形参<br>    MyClass(int a,int b) { real = a; imag = b; }<br>    MyClass operator+(MyClass&amp;obj)<br>    {<br>        real += obj.real;<br>        imag += obj.imag;<br>        return *this;<br>    }<br>    void dis()<br>    {<br>        cout &lt;&lt; real &lt;&lt; “,” &lt;&lt; imag;<br>    }<br>private:<br>    int real, imag;<br>};</p>
+<p>int  main()<br>{<br>    MyClass obj1(3),obj2;<br>    obj2 = obj1 + MyClass(3.5); //注意转换函数的使用是：类名（参数）<br>    obj2.dis();<br>    system(“pause”);<br>    return 0;<br>}</p>
+<p>//44//<br>//类型转换函数</p>
+<p>#include <iostream><br>using namespace std;  </iostream></p>
+<p>class MyClass<br>{<br>public:<br>    MyClass(){}<br>    MyClass(int a) { real = a; imag = 0; }//转换构造 只有一个形参<br>    MyClass(int a,int b) { real = a; imag = b; }<br>    operator int()//没有参数 返回类型为int 只能做为成员函数<br>    {<br>        return real;<br>    }<br>    friend MyClass operator+(MyClass&amp;,MyClass&amp;);<br>    void dis()<br>    {<br>        cout &lt;&lt; real &lt;&lt; “,” &lt;&lt; imag &lt;&lt; endl;<br>    }<br>private:<br>    int real, imag;<br>};</p>
+<p>MyClass operator+(MyClass&amp;obj1,MyClass&amp;obj2)<br>{<br>    MyClass obj;<br>    obj = obj1.real + obj2.real;<br>    obj = obj1.imag += obj2.imag;<br>    return obj;<br>}</p>
+<p>int  main()<br>{<br>    MyClass obj1(3),obj2;<br>    obj2 = obj1 + MyClass(3); //注意转换函数的使用是：类名（参数）<br>    obj2 = 3 + obj1;<br>    obj2 = obj1 + 3;<br>    obj2.dis();</p>
+<pre><code>MyClass obj(12,13);
+int a = 45;
+a = a + obj;
+a = obj + 56;
+cout &lt;&lt; a;
+system(&quot;pause&quot;);
+return 0;
+</code></pre><p>}</p>
+<p>//45//<br>//重载流提取和流输入 &lt;&lt; &gt;&gt; 重定向输出到文件</p>
+<p>#include <iostream>  </iostream></p>
+<p>#include <cstdio><br>using namespace std;</cstdio></p>
+<p>class MyClass<br>{<br>public:<br>    MyClass(int aa) :a(aa) {}<br>    friend istream &amp;operator&gt;&gt;(istream&amp;, MyClass&amp;);<br>    friend ostream &amp;operator&lt;&lt;(ostream&amp;, MyClass&amp;);</p>
+<p>private:<br>    int a;<br>};</p>
+<p>istream &amp;operator &gt;&gt;(istream&amp;mycin, MyClass&amp;obj1)<br>{<br>    cout &lt;&lt; “输入一个整数：” &lt;&lt; endl;<br>    mycin &gt;&gt; obj1.a;<br>    return mycin;<br>}<br>ostream &amp;operator&lt;&lt;(ostream&amp;mycout, MyClass&amp;obj2)<br>{<br>    mycout &lt;&lt; “这是一个对象输出:” &lt;&lt; obj2.a &lt;&lt; endl;<br>    return mycout;<br>}<br>int  main()<br>{<br>    FILE *stream; //建立一个流对象作为freopen_s（）的第一个参数 freopen()无需第一个参数<br>    freopen_s(&amp;stream,”test.txt”, “w”, stdout);//没有文件时自动建立<br>    MyClass obj(666);<br>    cin &gt;&gt; obj; //还是要求从键盘输入 但不会在屏幕输出<br>    cout &lt;&lt; obj;<br>    system(“pause”);<br>    return 0;<br>}</p>
+<p>//46//<br>//存在派生类和的子对象的构造函数<br>//顺序为：<br>/<em><br>基类<br>子对象<br>派生类
+</em>/</p>
+<p>#include <iostream>  </iostream></p>
+<p>#include <cstdio><br>using namespace std;</cstdio></p>
+<p>class MyClass1<br>{<br>public:<br>    MyClass1(int aa): a1(aa){}<br>    void dis()<br>    {<br>        cout &lt;&lt; a1 &lt;&lt; endl;<br>    }<br>private:<br>    int a1;<br>};</p>
+<p>class MyClass2:public MyClass1<br>{<br>public:<br>    MyClass2(int aa,int bb,int cc):MyClass1(aa),obj1(cc)<br>    {<br>        a2 = bb;<br>    }<br>    void dis()<br>    {<br>        MyClass1::dis();//若不加限定符存在二义性<br>        cout &lt;&lt; a2 &lt;&lt; endl;<br>        obj1.dis();<br>    }<br>private:<br>    int a2;<br>    MyClass1 obj1;<br>};</p>
+<p>int  main()<br>{<br>    MyClass2 obj2(23,26,666);<br>    obj2.dis();<br>    system(“pause”);<br>    return 0;<br>}</p>
+<p>//47//<br>//存在派生类和的子对象的构造函数<br>//顺序为：<br>/<em><br>基类<br>子对象<br>派生类
+</em>/</p>
+<p>#include <iostream>  </iostream></p>
+<p>#include <cstdio><br>using namespace std;</cstdio></p>
+<p>class MyClass3<br>{<br>public:<br>    MyClass3(int aa) :a3(),aa3(aa) {}<br>    void dis()<br>    {<br>        cout &lt;&lt; a3 &lt;&lt; endl &lt;&lt; aa3 &lt;&lt; endl;<br>    }<br>    int aa3;<br>private:<br>    int a3;<br>};</p>
+<p>class MyClass1<br>{<br>public:<br>    MyClass1(int aa): a1(aa){}<br>    void dis()<br>    {<br>        cout &lt;&lt; a1 &lt;&lt; endl;<br>    }<br>private:<br>    int a1;<br>};</p>
+<p>class MyClass2:public MyClass1<br>{<br>public:<br>    MyClass2(int aa,int bb,int cc):MyClass1(aa),obj1(cc),obj3(cc)<br>    {<br>        a2 = bb;<br>    }<br>    void dis()<br>    {<br>        MyClass1::dis();//若不加限定符存在二义性<br>        cout &lt;&lt; a2 &lt;&lt; endl;<br>        obj1.dis();<br>        obj3.dis();<br>    }<br>private:<br>    int a2;<br>    MyClass1 obj1;<br>    MyClass3 obj3;<br>};</p>
+<p>int  main()<br>{<br>    MyClass2 obj2(23,26,666);<br>    obj2.dis();  //输出：23,26,666 0 666 ，知，无法对非基类的子对象进行访问私有数据<br>    system(“pause”);<br>    return 0;<br>}</p>
+<p>//48//<br>//虚基类的构造函数<br>//虚基类：在继承间接共同基类时只保留一份成员 至少4个类之间的使用</p>
+<p>#include <iostream>  </iostream></p>
+<p>#include <cstdio><br>using namespace std;</cstdio></p>
+<p>class MyClass1<br>{<br>public:<br>    MyClass1(int aa): a(aa){}<br>protected:  //private时派生类无法访问<br>    int a;<br>};</p>
+<p>class MyClass2:public virtual MyClass1 //virtual和public的顺序无所谓<br>{<br>public:<br>    MyClass2(int bb):b(bb),MyClass1(bb){}<br>protected://private时派生类无法访问<br>    int b;<br>};</p>
+<p>class MyClass3:virtual public MyClass1<br>{<br>public:<br>    MyClass3(int cc) :c(cc), MyClass1(cc) {}<br>protected://private时派生类无法访问<br>    int c;<br>};</p>
+<p>//class MyClass4:public MyClass2,public MyClass3 //和下一行写法不同但用法相同，加virtual是为了派生类不会产生不明确的继承，此处的MyClass4没有派生类 故无需添加virtual<br>class MyClass4 :public virtual MyClass2, virtual public MyClass3<br>{<br>public:<br>    MyClass4(int dd) :d(dd), MyClass1(dd),MyClass2(dd),MyClass3(dd) {}  //此处要对基类的基类的构造函数MyClass1（int aa）初始化<br>    void dis()<br>    {<br>        cout &lt;&lt; a &lt;&lt; endl;<br>        cout &lt;&lt; b &lt;&lt; endl;<br>        cout &lt;&lt; c &lt;&lt; endl;<br>        cout &lt;&lt; d &lt;&lt; endl;</p>
+<pre><code>}
+</code></pre><p>protected:<br>    int d;<br>};</p>
+<p>int  main()<br>{<br>    MyClass4 obj(666);<br>    obj.dis();<br>    system(“pause”);<br>    return 0;<br>}</p>
+<p>//49//<br>//基类与派生类之间的转换</p>
+<p>#include <iostream>  </iostream></p>
+<p>#include <cstdio><br>using namespace std;</cstdio></p>
+<p>class MyClass1<br>{<br>public:<br>    MyClass1(int aa): a(aa){}<br>    int a;<br>};</p>
+<p>class MyClass2:public virtual MyClass1 //virtual和public的顺序无所谓<br>{<br>public:<br>    MyClass2(int bb):b(bb),MyClass1(bb){}<br>    int b;<br>};</p>
+<p>void f(MyClass1 &amp;obj)<br>{<br>    cout &lt;&lt; obj.a &lt;&lt; endl;<br>    //cout &lt;&lt; obj.b; error 无法访问派生类的成员，即使调用时实参是MyClass2的对象<br>}</p>
+<p>int  main()<br>{<br>    MyClass2 obj(666);<br>    f(obj);<br>    system(“pause”);<br>    return 0;<br>}</p>
+<p>//50//<br>//多态性的使用（虚函数）<br>/<em><br>类：点；线；正方形；正方体
+</em>/</p>
+<p>#include <iostream>  </iostream></p>
+<p>#include <cstdio><br>using namespace std;</cstdio></p>
+<p>class point<br>{<br>public:<br>    point(double x,double y): a(x),b(y){}<br>    double a,b;<br>    void virtual dis()<br>    {<br>        cout &lt;&lt; “坐标为：(“ &lt;&lt; a &lt;&lt; “,” &lt;&lt; b &lt;&lt; “)” &lt;&lt; endl;<br>    }<br>};</p>
+<p>class line:public point<br>{<br>public:<br>    line(double x1,double y1,double x2,double y2):a(x1),b(y1), c(x2), d(y2), point(x1,y1){}<br>    double a,b,c,d;</p>
+<pre><code>void virtual dis()
+{
+    double k, m;//y=kx+m
+    k = (b - d) / (a - c);
+    m = b - k*a;
+    if (m == 0)
+        cout &lt;&lt; &quot;直线为：y=&quot; &lt;&lt; k &lt;&lt; &quot;x&quot; &lt;&lt; endl;
+    else
+        cout &lt;&lt; &quot;直线为：y=&quot; &lt;&lt; k &lt;&lt; &quot;x+&quot; &lt;&lt; m &lt;&lt; endl;
+}
+</code></pre><p>};</p>
+<p>class zhengfangxing:public line<br>{<br>public:<br>    zhengfangxing(int x,int y):a(y-x), line(x,y,x,y){}<br>    int a;//边长<br>    void virtual dis()//面积<br>    {<br>        double s;//y=kx+m<br>        s = a*a;<br>        cout &lt;&lt; “面积为：s=” &lt;&lt; s &lt;&lt; endl;<br>    }<br>};</p>
+<p>class lifangti :public zhengfangxing<br>{<br>public:<br>    lifangti(int x, int y) :a(y - x), zhengfangxing(x, y) {}<br>    int a;//边长<br>    void virtual dis()//体积<br>    {<br>        double v;//y=kx+m<br>        v = a<em>a</em>a;<br>        cout &lt;&lt; “体积为：v=” &lt;&lt; v &lt;&lt; endl;<br>    }<br>};</p>
+<p>int  main()<br>{<br>    //一般使用<br>    point obj1(666,44);<br>    line obj2(3, 8, 0, 1);<br>    zhengfangxing obj3(4,8);<br>    lifangti obj4(4,8);<br>    obj1.dis();<br>    obj2.dis();<br>    obj3.dis();<br>    obj4.dis();</p>
+<pre><code>//使用虚函数（以下输出和上边完全相同）
+point *p; //基类指针分别指向不同的派生类
+p = &amp;obj1;
+p-&gt;dis();
+p = &amp;obj2;
+p-&gt;dis();
+p = &amp;obj3;
+p-&gt;dis();
+p = &amp;obj4;
+p-&gt;dis();
+
+system(&quot;pause&quot;);
+return 0;
+</code></pre><p>}</p>
+<p>//51//<br>//多态性的使用（纯虚函数）<br>/<em><br>抽象基类：存在纯虚函数的基类 shape<br>类：点；正方形；正方体
+</em>/</p>
+<p>#include <iostream>  </iostream></p>
+<p>#include <cstdio><br>using namespace std;</cstdio></p>
+<p>class shape<br>{<br>public:<br>    virtual void point() { cout &lt;&lt; “点坐标为：” &lt;&lt; 0 &lt;&lt; “,” &lt;&lt; 0 &lt;&lt; endl; }<br>    virtual void area() { cout &lt;&lt; “面积为：” &lt;&lt; 0 &lt;&lt; endl; }<br>    virtual void v() { cout &lt;&lt; “体积为：” &lt;&lt; 0 &lt;&lt; endl; }<br>    virtual void shapeName() = 0;<br>};<br>class mypoint:public shape<br>{<br>public:<br>    mypoint(double x,double y): a(x),b(y){}<br>    double a,b;<br>    virtual void shapeName()<br>    {<br>        cout &lt;&lt; “this is a point. “ &lt;&lt; endl;<br>        point();<br>        area();<br>        v();<br>    }<br>    void point()<br>    {<br>        cout &lt;&lt; “坐标为：(“ &lt;&lt; a &lt;&lt; “,” &lt;&lt; b &lt;&lt; “)” &lt;&lt; endl;<br>    }<br>};</p>
+<p>class myzhengfangxing:public shape<br>{<br>public:<br>    myzhengfangxing(int x,int y):a(y-x){}<br>    int a;//边长<br>    void area()//面积<br>    {<br>        double s;//y=kx+m<br>        s = a*a;<br>        cout &lt;&lt; “面积为：s=” &lt;&lt; s &lt;&lt; endl;<br>    }<br>    virtual void shapeName()<br>    {<br>        cout &lt;&lt; “this is a zhengfangxing. “ &lt;&lt; endl;<br>        point();<br>        area();<br>        v();<br>    }<br>};</p>
+<p>class mylifangti :public shape<br>{<br>public:<br>    mylifangti(int x, int y) :a(y - x){}<br>    int a;//边长<br>    void v()//体积<br>    {<br>        double v;//y=kx+m<br>        v = a<em>a</em>a;<br>        cout &lt;&lt; “体积为：v=” &lt;&lt; v &lt;&lt; endl;<br>    }<br>    virtual void shapeName()<br>    {<br>        cout &lt;&lt; “this is a lifangti. “ &lt;&lt; endl;<br>        point();<br>        area();<br>        v();<br>    }<br>};</p>
+<p>int  main()<br>{<br>    //一般使用<br>    mypoint obj1(666,44);<br>    myzhengfangxing obj2(4,8);<br>    mylifangti obj3(4,8);<br>    obj1.shapeName();<br>    obj2.shapeName();<br>    obj3.shapeName();</p>
+<pre><code>cout &lt;&lt; endl;
+//使用虚函数（以下输出和上边完全相同）
+shape *p; //基类指针分别指向不同的派生类
+p = &amp;obj1;
+p-&gt;shapeName();
+p = &amp;obj2;
+p-&gt;shapeName();
+p = &amp;obj3;
+p-&gt;shapeName();
+system(&quot;pause&quot;);
+return 0;
+</code></pre><p>}</p>
+<p>//52//<br>//main.cpp<br>//头文件的使用 在classmypoint.h 中声明mypoint类</p>
+<p>#include <iostream>  </iostream></p>
+<p>#include “classmypoint.h” //自己的头文件必须双引号<br>using namespace std;</p>
+<p>int  main()<br>{<br>    mypoint obj1(666,44);<br>    obj1.point();<br>    system(“pause”);<br>    return 0;<br>}</p>
+<p>classmypoint.h</p>
+<p>#include <iostream>   //此文件中用到的库要加到此文件的头文件<br>using namespace std;<br>class mypoint<br>{<br>public:<br>    mypoint(double x, double y) : a(x), b(y) {}<br>    double a, b;<br>    void point()<br>    {<br>        cout &lt;&lt; “坐标为：(“ &lt;&lt; a &lt;&lt; “,” &lt;&lt; b &lt;&lt; “)” &lt;&lt; endl;<br>    }<br>}; </iostream></p>
+<p>//53//<br>//流对象控制输出 特殊函数（字符函数）输入输出</p>
+<p>#include <iostream><br>using namespace std;</iostream></p>
+<p>void f(char <em>t)<br>{<br>    //输出一个字符的两个函数<br>    cout.put(65); //等价putchar(65); 等价cout.put(‘A’);<br>    cout.put(‘\n’);<br>    //输入函数get的3中用法<br>    /</em>cin.get();//①取一个字符，包括空白（空格）<br>    char ch;<br>    cin.get(ch);//②赋值给ch<br>    char str1[50];<br>    cin.get(str1,7,’a’);//③赋值给str[]数组 参数分别是：指针 读取个数(n-1) 终止字符(不论是否达到终止个数，遇到结束符即刻终止)<br>    cout &lt;&lt; str1 &lt;&lt; endl;<br>    */<br>    //char str2[50];<br>    //cin.getline(str2, 7, ‘a’); //参数分别是：指针 读取个数(n - 1) 终止字符(不论是否达到终止个数，遇到结束符即刻终止)  输出时不包括终止字符<br>    //cout &lt;&lt; str2 &lt;&lt; endl;</p>
+<pre><code>//控制符
+int a = 21;
+cout.setf(ios::showbase); //显示基数符号（0x 0）
+cout &lt;&lt; a &lt;&lt; endl;
+cout.unsetf(ios::dec);//终止10进制
+cout.setf(ios::hex);//16进制 必须对10进制的设置终止，否则不起作用
+cout &lt;&lt; a &lt;&lt; endl;
+cout.unsetf(ios::hex);//终止10进制
+cout.setf(ios::oct);//8进制 必须对16进制的设置终止，否则不起作用
+cout &lt;&lt; a &lt;&lt; endl;
+cout.width(10); //仅对一个输出变量有效
+cout &lt;&lt; t &lt;&lt; t &lt;&lt; endl; //第一个t不足10位时左边自动以空格替代
+cout.fill(&apos;*&apos;);
+cout.width(10);
+cout &lt;&lt; t &lt;&lt; t &lt;&lt; endl; //第一个t不足10位时左边以*替代
+double b = 0.31415926;
+cout.setf(ios::scientific);
+cout &lt;&lt; b &lt;&lt; endl;
+cout.unsetf(ios::scientific);
+cout.setf(ios::fixed);//默认小数点后6位输出
+cout &lt;&lt; b &lt;&lt; endl;
+cout.precision(20);
+cout.setf(ios::fixed);//小数点后10位输出 原数小于10时，0补充或取近似值 如1取为0.99999
+cout &lt;&lt; b &lt;&lt; endl;
+cout.setf(ios::showpos | ios::right);
+cout &lt;&lt; b &lt;&lt; endl;
+</code></pre><p>}</p>
+<p>void f2()<br>{<br>    //eof<br>    char c;<br>    while (!cin.eof())<br>    {<br>        c = cin.get();<br>        if ( c == ‘a’)<br>            break;<br>        cout.put(c);<br>    }<br>}<br>int  main()<br>{<br>    char t[111] = {“dfdgg”};<br>    f(t);<br>    f2();<br>    system(“pause”);<br>    return 0;<br>}</p>
+<p>//54//<br>//文件操作  （ASCII 、二进制）</p>
+<p>#include <fstream>  </fstream></p>
+<p>#include <iostream><br>using namespace std;<br>/*<br>f1()输入输出ASCII<br>f2()输入输出二进制<br>f3()二进制的输入输出同时操作 及修改磁盘二进制数据后再次存放到磁盘</iostream></p>
+<p>istream&amp; read(char <em> buffer,int len)为从文件以二进制方式读出<br>ostream&amp; write(const char </em> buffer,int len)以二进制方式写入到文件<br>*/</p>
+<p>void f1()//对ASCII输出到文件<br>{<br>    ofstream outfile(“test.txt”,ios::out); //文件不存在会自动创建  若原来存在会覆盖<br>    if (!outfile)<br>    {<br>        cerr &lt;&lt; “open error!” &lt;&lt; endl;<br>        exit(1);<br>    }<br>    outfile &lt;&lt; “dfsdf” &lt;&lt; endl &lt;&lt; 999;<br>    outfile.close();<br>}</p>
+<p>void f11()//用 ASCII输入<br>{<br>    ifstream infile(“test.txt”,ios::in | ios::_Nocreate);//不创建新文件 若不存在则打开失败<br>    if (!infile)<br>    {<br>        cerr &lt;&lt; “fail” &lt;&lt; endl;<br>        exit(1);<br>    }<br>    int a[2];<br>    for (size_t i = 0; i &lt; 2; i++) //若与文件信息数据类型不匹配，出现意想不到的结果<br>    {<br>        infile &gt;&gt; a[i];<br>        cout &lt;&lt; a[i] &lt;&lt; endl;<br>    }<br>    infile.close();<br>}</p>
+<p>void f12()//用 ASCII输入<br>{<br>    ifstream infile(“test.txt”, ios::in | ios::_Nocreate);//不创建新文件 若不存在则打开失败<br>    if (!infile)<br>    {<br>        cerr &lt;&lt; “fail” &lt;&lt; endl;<br>        exit(1);<br>    }<br>    char ch;<br>    for (; infile.get(ch);) //空格 空行 均可读入<br>    {<br>        cout.put(ch);<br>    }<br>    infile.close();<br>}</p>
+<p>void f2()//二进制方式输出到文件<br>{<br>    struct student<br>    {<br>        char name[20];<br>        int num;<br>        int age;<br>    };<br>    student stu[2] = {“wang”,10086,18,”zhao”,10084,18 };<br>    ofstream outfile(“stu.txt”,ios::binary);<br>    if (!outfile)<br>    {<br>        cerr &lt;&lt; “error…” &lt;&lt; endl;<br>        abort();<br>    }<br>    outfile.write((char*)&amp;stu[0], sizeof(stu)); //stu[0]是起始地址 sizeof(stu)是整个结构体变量的大小<br>    outfile.close();<br>}</p>
+<p>void f21()//二进制方式输出到文件<br>{<br>    struct student<br>    {<br>        char name[20];<br>        int num;<br>        int age;<br>    };<br>    student stu[2];<br>    ifstream infile(“stu.txt”, ios::binary);<br>    if (!infile)<br>    {<br>        cerr &lt;&lt; “error…” &lt;&lt; endl;<br>        abort();<br>    }<br>    infile.read((char*)&amp;stu[0], sizeof(stu));<br>    infile.close();<br>    for (size_t i = 0; i &lt; 2; i++)<br>    {<br>        cout &lt;&lt; stu[i].name &lt;&lt; endl;<br>        cout &lt;&lt; stu[i].num &lt;&lt; endl &lt;&lt; endl;</p>
+<pre><code>}
+</code></pre><p>}</p>
+<p>void f3()<br>{<br>    struct student<br>    {<br>        char name[20];<br>        int num;<br>        int age;<br>    };<br>    student stu[5] = { “q”,100,18,”w”,101,18 ,”e”,102,18,”r”,103,18 ,”t”,104,18};<br>    fstream iofile(“stu.txt”, ios::binary | ios::in | ios::out); //ios::in | ios::out必须添加，否则无法操作<br>    if (!iofile)<br>    {<br>        cerr &lt;&lt; “error…” &lt;&lt; endl;<br>        abort();<br>    }<br>    //存入到磁盘<br>    iofile.write((char*)&amp;stu[0], sizeof(stu));</p>
+<pre><code>//从磁盘文件读取第1，3，5个学生数据
+student stu_1[5];
+for (size_t i = 0; i &lt; 5; i+=2)
+{
+    iofile.seekg(i*sizeof(stu[i]), ios::beg);//定位在1,3,5学生数据开头
+    iofile.read((char*)&amp;stu_1[i/2],sizeof(stu_1[0]));//读取存放
+    cout &lt;&lt; stu_1[i / 2].name &lt;&lt; &quot;,&quot; &lt;&lt; stu_1[i / 2].num &lt;&lt; endl;
+}
+
+//修改第3人的信息
+/*stu_1[2].name = &quot;WTO&quot;;*/ //直接重新复制出错，应使用strcpy(str1,str2)
+strcpy_s(stu[2].name, &quot;WTO&quot;);
+stu[2].num = 666;
+iofile.seekg(2 * sizeof(stu[0]), ios::beg); //定位
+iofile.write((char*)&amp;stu[2], sizeof(stu[2])); //写入更新 stu[2]为开始位置
+iofile.seekg(0, ios::beg);//重定位到文件开头
+iofile.read((char*)&amp;stu[0], sizeof(stu)); 
+cout.put(&apos;\n&apos;);
+for (size_t i = 0; i &lt; 5; i++)
+{
+    cout &lt;&lt; stu[i].name &lt;&lt; &quot;,&quot;;
+    cout &lt;&lt; stu[i].num &lt;&lt; endl;
+}
+iofile.close();
+</code></pre><p>}</p>
+<p>int  main()<br>{<br>    //f1(); //f11();<br>    //f12();</p>
+<pre><code>/*f2();
+f21();*/
+
+f3();
+system(&quot;pause&quot;);
+return 0;
+</code></pre><p>}</p>
+<p>//55//<br>//文件操作2  </p>
+<p>#include <fstream>  </fstream></p>
+<p>#include <iostream><br>using namespace std;<br>/*要求<br>①输入4个数，存放在两个文件（1.txt,2.txt），每个文件2个数<br>②把1.txt中的2个数存放在2.txt后<br>③对2.txt中的4个数排序，排序后从新存放到2.txt</iostream></p>
+<p>istream&amp; read(char <em> buffer,int len)为从文件以二进制方式读出<br>ostream&amp; write(const char </em> buffer,int len)以二进制方式写入到文件<br>*/</p>
+<p>void f1()//ASCII方式<br>{<br>    int a;<br>    ofstream outfile(“1.txt”);//默认以ios::out<br>    if (!outfile)<br>    {<br>        cerr &lt;&lt; “error…” &lt;&lt; endl;<br>        abort();<br>    }<br>    for (size_t i = 0; i &lt; 2; i++)<br>    {<br>        cin &gt;&gt; a;<br>        outfile &lt;&lt; a &lt;&lt; “ “;<br>    }<br>    outfile.close();  //不关闭直接打开下一个文件，提示error… </p>
+<pre><code>outfile.open(&quot;2.txt&quot;);//默认以ios::out
+if (!outfile)
+{
+    cerr &lt;&lt; &quot;error...&quot; &lt;&lt; endl;
+    abort();
+}
+for (size_t i = 0; i &lt; 2; i++)
+{
+    cin &gt;&gt; a;
+    outfile &lt;&lt; a &lt;&lt; &quot; &quot;;
+}
+outfile.close();
+
+
+ifstream infile(&quot;1.txt&quot;);
+if (!infile)
+{
+    cerr &lt;&lt; &quot;error...&quot; &lt;&lt; endl;
+    abort();
+}
+int t[2];
+for (size_t k = 0; k &lt; 2; k++)
+{
+    infile &gt;&gt; t[k];
+}
+infile.close();
+
+outfile.open(&quot;2.txt&quot;,ios::app); //打开文件，并使指针指向末尾
+if (!outfile)
+{
+    cerr &lt;&lt; &quot;error...&quot; &lt;&lt; endl;
+    abort();
+}
+for (size_t k = 0; k &lt; 2; k++)
+{
+    outfile &lt;&lt; t[k] &lt;&lt; &quot; &quot;;
+}
+outfile.close();
+
+
+infile.open(&quot;2.txt&quot;);
+if (!infile)
+{
+    cerr &lt;&lt; &quot;error...&quot; &lt;&lt; endl;
+    abort();
+}
+int t2[4];
+for (size_t k = 0; k &lt; 4; k++)
+{
+    infile &gt;&gt; t2[k];
+}
+infile.close();
+
+int temp;  //冒泡
+for (size_t i = 0; i &lt; 4-1; i++)
+{
+    for (size_t j = 0; j &lt; 4 - i - 1; j++)
+        if (t2[j]&gt;t2[j + 1])
+        {
+            temp = t2[j];
+            t2[j] = t2[j + 1];
+            t2[j + 1] = temp;
+        }
+}
+
+cout &lt;&lt; &quot;排序后的数据：&quot; &lt;&lt; endl;
+for (size_t i = 0; i &lt; 4; i++)
+{
+    cout &lt;&lt; t2[i] &lt;&lt; endl;
+}
+
+outfile.open(&quot;2.txt&quot;); //打开文件，重新写入，覆盖原有数据
+if (!outfile)
+{
+    cerr &lt;&lt; &quot;error...&quot; &lt;&lt; endl;
+    abort();
+}
+for (size_t k = 0; k &lt; 4; k++)
+{
+    outfile &lt;&lt; t2[k] &lt;&lt; &quot; &quot;;
+}
+outfile.close();
+</code></pre><p>}</p>
+<p>int  main()<br>{</p>
+<pre><code>f1();
+system(&quot;pause&quot;);
+return 0;
+</code></pre><p>}</p>
+<p>//56//<br>//异常处理和命名空间 可以多个try catch  一个throw</p>
+<p>#include <iostream>  </iostream></p>
+<p>#include <iostream> </iostream></p>
+<p>#include <cmath><br>using namespace std;<br>/<em>知三角形三边求面积
+</em>/<br>namespace myname<br>{<br>    void f1(double a, double b, double c)//面积求解<br>    {<br>        double s = (a + b + c) / 2;<br>        if ((a + b &lt;= c) || (a + c &lt;= b) || (c + b &lt;= a))<br>            throw a;<br>        cout &lt;&lt; “面积:” &lt;&lt; sqrt(s<em>(s - a)</em>(s - b)*(s - c)) &lt;&lt; endl;</cmath></p>
+<pre><code>}
+
+void f2(int a)
+{
+    try
+    {
+        if (a&lt;0)throw a;
+        cout &lt;&lt; a &lt;&lt; endl;
+    }
+    catch (char b)
+    {
+        cout &lt;&lt; &quot;a error...&quot;;
+    }
+}
+</code></pre><p>}</p>
+<p>using namespace myname;//只能在主函数前声明 不能在文件开头声明</p>
+<p>int  main()<br>{<br>    try<br>    {<br>        //f1(11, 78, 89); //只能捕获一个异常，即遇到异常就转到catch 不再执行以下内容<br>        f2(-2);<br>    }<br>    catch (int a) //参数类型找不到时(不匹配)，等于没写<br>    {<br>        cout &lt;&lt; “error…” &lt;&lt; endl &lt;&lt; a &lt;&lt; endl;;<br>    }<br>    system(“pause”);<br>    return 0;<br>}</p>
+<p>//57//<br>//运算符的优先级</p>
+<p>#include <iostream>  </iostream></p>
+<p>#include <iostream> </iostream></p>
+<p>#include <cmath><br>using namespace std;</cmath></p>
+<p>void f()<br>{<br>    //优先级<br>    //1.::   void MyClass::ff(); //类内声明成员函数 （MyClass可省略）<br>    //2.() [] -&gt; . ++(后置) –(后置)<br>    //3.++ – ~ ！ -(负号) +(正号) <em>(指针) &amp;(取地址) (类型转换) sizeof new delete<br>    //4.</em>(乘) % /<br>    //5.+(加) -<br>    //6.&lt;&lt;(按位左移) &gt;&gt;<br>    //7. &lt; &lt;= &gt; &gt;=<br>    //8.== !=<br>    //9.&amp;(按位与运算)<br>    //10.^ (异或)<br>    //11.| (按位或)<br>    //12.&amp;&amp;<br>    //13.||<br>    //14.三目<br>    //15.赋值 = +=……<br>    //16.throw<br>    //17.,</p>
+<pre><code>//级别判断（高—低）：初等运算符 单目 算术 关系 逻辑 条件 赋值 逗号
+cout &lt;&lt; &quot;blank..&quot; &lt;&lt; endl;
+</code></pre><p>}</p>
+<p>int  main()<br>{</p>
+<pre><code>system(&quot;pause&quot;);
+return 0;
+</code></pre><p>}</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    <div>
+    
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+    
+    </div>
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/12/9 月二级Office VIP软件/" rel="next" title="2019 年 9 月二级Office VIP软件">
+                <i class="fa fa-chevron-left"></i> 2019 年 9 月二级Office VIP软件
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">YG201506</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">32</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/yg201506" title="GitHub &rarr; https://github.com/yg201506" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:771183343@qq.com" title="E-Mail &rarr; mailto:771183343@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.w3school.com.cn/" title="http://www.w3school.com.cn/" rel="noopener" target="_blank">w3school</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.runoob.com/" title="http://www.runoob.com/" rel="noopener" target="_blank">菜鸟教程</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.liaoxuefeng.com/" title="https://www.liaoxuefeng.com/" rel="noopener" target="_blank">廖雪峰官网</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<!-- 新增访客统计代码 -->
+<div class="copyright">
+  
+</div>
+
+<div class="busuanzi-count">
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      新域名访问用户： <span class="busuanzi-value" id="busuanzi_value_site_uv"></span> 人
+    </span>
+    <div class="powered-by"></div>
+    <span class="site-uv">
+      <i class="fa fa-eye"></i>
+      访问次数： <span class="busuanzi-value" id="busuanzi_value_site_pv"></span> 次
+    </span>
+    <span class="site-pv">
+      <i class="fa fa-pencil"></i>
+      全站共： <span class="post-count">23.1k</span> 字
+    </span>  
+</div>
+<!-- 新增访客统计代码 END-->
+
+
+
+
+<!-- 
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YG201506</span>
+
+  -->
+
+  
+
+  
+
+
+
+ <!-- <div class="powered-by">由 <a href="http://t.cn/EMGpL80" class="theme-link" rel="noopener" target="_blank">个人网盘</a> 强力驱动 v3.8.0</div> -->
+
+
+
+
+
+
+
+
+
+
+  <span class="post-meta-divider"></span>
+
+
+
+ <div class="theme-info">  <a href="http://t.cn/EMGpL80" class="theme-link" rel="noopener" target="_blank">个人网盘</a> </div> 
+
+
+
+
+
+ <div class="theme-info">  <a href="http://yg2015062.gz01.bdysite.com/music" class="theme-link" rel="noopener" target="_blank">心动音乐</a> </div> 
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.7.0"></script>
+
+  <script src="/js/src/motion.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=6.7.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=6.7.0"></script>
+
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'xwISP425KbMS36mtEJ5fGeBO-gzGzoHsz',
+    appKey: 'QlsaTh3P64htgl9uxapS9gCM',
+    placeholder: 'Just go go',
+    avatar: 'hide',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+</script>
+
+
+
+
+  
+
+
+  
+
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+  <script>
+    
+    
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+  
+</body>
+</html>
